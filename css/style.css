@@ -198,13 +198,6 @@ main > section,
     border-bottom: 1px solid var(--border);
 }
 
-
-/*
-   Final hero proportions:
-   slightly more room for the text while bringing the
-   scientific graphic closer to the headline.
-*/
-
 .hero-grid {
     width: 100%;
 
@@ -959,6 +952,87 @@ main > section,
 
 
 /* =========================================================
+   EDUCATION
+   ========================================================= */
+
+.education-section {
+    padding:
+        110px
+        0
+        125px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.education-list {
+    margin-top: 52px;
+
+    border-top: 1px solid var(--border);
+}
+
+.education-item {
+    display: grid;
+
+    grid-template-columns:
+        165px
+        minmax(0, 1fr);
+
+    gap: 45px;
+
+    padding:
+        38px
+        0
+        42px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.education-meta {
+    padding-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 0.83rem;
+}
+
+.education-main h3 {
+    margin: 0;
+
+    font-size: clamp(
+        1.55rem,
+        2.2vw,
+        2.1rem
+    );
+
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+}
+
+.education-degree {
+    margin:
+        12px
+        0
+        0;
+
+    color: var(--accent);
+
+    font-size: 0.95rem;
+}
+
+.education-detail {
+    margin:
+        14px
+        0
+        0;
+
+    color: var(--muted);
+
+    font-size: 0.86rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
    RESEARCH
    ========================================================= */
 
@@ -1310,12 +1384,6 @@ a.publication:hover .publication-arrow {
             );
     }
 
-    /*
-       Hide the hero illustration on smaller screens.
-       This keeps the mobile landing view clean and puts
-       the professional statement first.
-    */
-
     .hero-visual {
         display: none;
     }
@@ -1368,7 +1436,8 @@ a.publication:hover .publication-arrow {
         max-width: 700px;
     }
 
-    .experience-item {
+    .experience-item,
+    .education-item {
         grid-template-columns: 1fr;
 
         gap: 20px;
@@ -1442,6 +1511,7 @@ a.publication:hover .publication-arrow {
     .work-section,
     .about-section,
     .experience-section,
+    .education-section,
     .research-section,
     .contact-section {
         padding:
@@ -1554,7 +1624,8 @@ a.publication:hover .publication-arrow {
             10px;
     }
 
-    .experience-item {
+    .experience-item,
+    .education-item {
         padding:
             36px
             0;
