@@ -104,7 +104,7 @@ main > section,
     display: flex;
     align-items: center;
 
-    gap: 36px;
+    gap: 34px;
 }
 
 .site-nav a {
@@ -121,6 +121,23 @@ main > section,
     color: var(--text);
 
     transform: translateY(-1px);
+}
+
+
+/* CV LINK IN NAVIGATION */
+
+.site-nav .nav-cv {
+    color: var(--text);
+    font-weight: 650;
+
+    padding-bottom: 2px;
+
+    border-bottom: 1px solid var(--text);
+}
+
+.site-nav .nav-cv:hover {
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
 
@@ -182,19 +199,25 @@ main > section,
     border-bottom: 1px solid var(--border);
 }
 
+
+/*
+   Slightly more space is allocated to the hero graphic
+   compared with the previous version.
+*/
+
 .hero-grid {
     width: 100%;
 
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.3fr)
-        minmax(300px, 0.7fr);
+        minmax(0, 1.22fr)
+        minmax(340px, 0.78fr);
 
     gap: clamp(
-        60px,
-        8vw,
-        130px
+        55px,
+        6.5vw,
+        105px
     );
 
     align-items: center;
@@ -208,15 +231,20 @@ main > section,
     margin-bottom: 22px;
 }
 
+
+/*
+   Slightly reduced from the original oversized headline.
+*/
+
 .hero h1 {
     max-width: 900px;
 
     margin: 0;
 
     font-size: clamp(
-        3.4rem,
-        5.4vw,
-        5.8rem
+        3.35rem,
+        5.2vw,
+        5.65rem
     );
 
     line-height: 0.96;
@@ -300,14 +328,18 @@ main > section,
    HERO IMAGE
    ========================================================= */
 
+/*
+   No border-left here.
+   The generated hero graphic already contains a subtle
+   vertical divider, so this avoids the double-line effect.
+*/
+
 .hero-visual {
     position: relative;
 
     width: 100%;
 
     overflow: hidden;
-
-    border-left: 1px solid var(--border);
 
     background: var(--background);
 }
@@ -1110,7 +1142,9 @@ a.publication:hover .publication-arrow {
     display: flex;
     flex-wrap: wrap;
 
-    gap: 25px;
+    gap:
+        18px
+        25px;
 
     margin-top: 34px;
 }
@@ -1122,6 +1156,19 @@ a.publication:hover .publication-arrow {
 
     font-size: 0.9rem;
     font-weight: 700;
+
+    transition:
+        color 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+.contact-links a:hover {
+    color: var(--accent);
+
+    border-color: var(--accent);
+
+    transform: translateY(-1px);
 }
 
 
@@ -1144,6 +1191,13 @@ a.publication:hover .publication-arrow {
     color: var(--muted);
 
     font-size: 0.78rem;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+
+    gap: 24px;
 }
 
 .site-footer a {
@@ -1521,5 +1575,9 @@ a.publication:hover .publication-arrow {
 
     .site-footer {
         min-height: 90px;
+    }
+
+    .footer-links {
+        gap: 15px;
     }
 }
