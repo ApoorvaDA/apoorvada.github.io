@@ -72,10 +72,7 @@ a {
 .site-header,
 main > section,
 .site-footer {
-    width: min(
-        calc(100% - 64px),
-        var(--max-width)
-    );
+    width: min(calc(100% - 64px), var(--max-width));
 
     margin-left: auto;
     margin-right: auto;
@@ -99,6 +96,7 @@ main > section,
 .site-name {
     font-size: 1.22rem;
     font-weight: 700;
+
     letter-spacing: -0.035em;
 }
 
@@ -121,6 +119,7 @@ main > section,
 
 .site-nav a:hover {
     color: var(--text);
+
     transform: translateY(-1px);
 }
 
@@ -145,12 +144,12 @@ main > section,
 }
 
 .section-heading {
+    max-width: 970px;
+
     margin:
         28px
         0
         72px;
-
-    max-width: 970px;
 
     font-size: clamp(
         3rem,
@@ -209,17 +208,10 @@ main > section,
     margin-bottom: 22px;
 }
 
-
-/*
-   Slightly reduced from the previous hero size.
-   This keeps the editorial impact without overwhelming
-   the rest of the first screen.
-*/
-
 .hero h1 {
-    margin: 0;
-
     max-width: 900px;
+
+    margin: 0;
 
     font-size: clamp(
         3.4rem,
@@ -267,11 +259,11 @@ main > section,
 
 .primary-button,
 .secondary-button {
+    min-height: 52px;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    min-height: 52px;
 
     padding:
         0
@@ -289,11 +281,12 @@ main > section,
 
 .primary-button {
     background: var(--text);
-    color: white;
+    color: #ffffff;
 }
 
 .secondary-button {
     border: 1px solid var(--text);
+
     background: transparent;
 }
 
@@ -304,104 +297,37 @@ main > section,
 
 
 /* =========================================================
-   HERO VISUAL
+   HERO IMAGE
    ========================================================= */
 
 .hero-visual {
     position: relative;
 
-    aspect-ratio: 0.82;
-    min-height: 460px;
+    width: 100%;
 
     overflow: hidden;
 
     border-left: 1px solid var(--border);
 
-    background:
-        linear-gradient(
-            145deg,
-            transparent 0%,
-            rgba(49, 92, 82, 0.05) 100%
-        );
+    background: var(--background);
 }
 
-.visual-label {
-    position: absolute;
+.hero-image-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    top: 28px;
-    left: 30px;
-
-    color: var(--accent);
-
-    font-size: 0.68rem;
-    font-weight: 700;
-
-    letter-spacing: 0.17em;
+    aspect-ratio: 0.82;
 }
 
-.visual-orbit {
-    position: absolute;
+.hero-image-visual img {
+    width: 100%;
+    height: 100%;
 
-    border: 1px solid rgba(49, 92, 82, 0.32);
-    border-radius: 50%;
-}
+    object-fit: contain;
+    object-position: center;
 
-.orbit-one {
-    width: 72%;
-    aspect-ratio: 1;
-
-    top: 13%;
-    left: 14%;
-}
-
-.orbit-two {
-    width: 52%;
-    aspect-ratio: 1;
-
-    top: 25%;
-    left: 24%;
-}
-
-.orbit-three {
-    width: 32%;
-    aspect-ratio: 1;
-
-    top: 36%;
-    left: 34%;
-}
-
-.visual-core {
-    position: absolute;
-
-    width: 18px;
-    height: 18px;
-
-    top: 48%;
-    left: 48%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background: var(--accent);
-
-    box-shadow:
-        0 0 0 14px rgba(49, 92, 82, 0.08),
-        0 0 0 34px rgba(49, 92, 82, 0.04);
-}
-
-.visual-caption {
-    position: absolute;
-
-    left: 30px;
-    bottom: 28px;
-
-    margin: 0;
-
-    color: var(--muted);
-
-    font-size: 0.86rem;
-    line-height: 1.5;
+    mix-blend-mode: multiply;
 }
 
 
@@ -431,13 +357,13 @@ main > section,
    ========================================================= */
 
 .project {
+    min-height: 570px;
+
     display: grid;
 
     grid-template-columns:
         minmax(0, 1fr)
         minmax(0, 1fr);
-
-    min-height: 570px;
 
     overflow: hidden;
 
@@ -486,8 +412,8 @@ main > section,
         0
         0;
 
-    font-weight: 650;
     font-size: 1rem;
+    font-weight: 650;
 }
 
 .project-description {
@@ -514,10 +440,10 @@ main > section,
 }
 
 .project-tech span {
+    min-height: 35px;
+
     display: inline-flex;
     align-items: center;
-
-    min-height: 35px;
 
     padding:
         0
@@ -548,9 +474,7 @@ main > section,
     display: inline-block;
 
     transition:
-        transform
-        180ms
-        ease;
+        transform 180ms ease;
 }
 
 .project-link:hover span {
@@ -579,17 +503,16 @@ main > section,
     left: 32px;
     bottom: 27px;
 
+    color: var(--accent);
+
     font-size: 0.67rem;
     font-weight: 700;
 
     letter-spacing: 0.15em;
-
-    color: var(--accent);
 }
 
 .image-project-visual {
     display: flex;
-
     align-items: center;
     justify-content: center;
 }
@@ -598,13 +521,6 @@ main > section,
 /* =========================================================
    BIOHUB VISUAL
    ========================================================= */
-
-/*
-   The embryo source image contains text near its upper edge.
-   We deliberately enlarge and shift the image upward so the
-   card concentrates on the embryo rather than the embedded
-   presentation heading.
-*/
 
 .biohub-visual {
     position: relative;
@@ -623,8 +539,7 @@ main > section,
     left: 50%;
     top: 50%;
 
-    transform:
-        translate(-50%, -46%);
+    transform: translate(-50%, -46%);
 
     object-fit: cover;
     object-position: center;
@@ -705,7 +620,6 @@ main > section,
 
 .neurogolf-visual {
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -719,7 +633,6 @@ main > section,
 
 .arc-demo {
     display: flex;
-
     align-items: center;
 
     gap: clamp(
@@ -752,6 +665,7 @@ main > section,
 
 .arc-grid span.active {
     border-color: var(--accent);
+
     background: var(--accent);
 }
 
@@ -796,9 +710,9 @@ main > section,
 }
 
 .about-heading h2 {
-    margin: 0;
-
     max-width: 720px;
+
+    margin: 0;
 
     font-size: clamp(
         3rem,
@@ -952,9 +866,7 @@ main > section,
     max-width: 900px;
 
     transition:
-        transform
-        180ms
-        ease;
+        transform 180ms ease;
 }
 
 .experience-item:hover .experience-main {
@@ -1062,9 +974,7 @@ main > section,
 
 a.publication {
     transition:
-        padding-left
-        180ms
-        ease;
+        padding-left 180ms ease;
 }
 
 a.publication:hover {
@@ -1127,9 +1037,7 @@ a.publication:hover {
     font-size: 1.15rem;
 
     transition:
-        transform
-        180ms
-        ease;
+        transform 180ms ease;
 }
 
 a.publication:hover .publication-arrow {
@@ -1240,9 +1148,7 @@ a.publication:hover .publication-arrow {
 
 .site-footer a {
     transition:
-        color
-        180ms
-        ease;
+        color 180ms ease;
 }
 
 .site-footer a:hover {
@@ -1267,12 +1173,16 @@ a.publication:hover .publication-arrow {
     }
 
     .hero-visual {
-        min-height: 360px;
+        min-height: 0;
 
-        aspect-ratio: 16 / 8;
+        aspect-ratio: 16 / 10;
 
         border-left: 0;
         border-top: 1px solid var(--border);
+    }
+
+    .hero-image-visual img {
+        object-fit: contain;
     }
 
     .project {
@@ -1444,13 +1354,13 @@ a.publication:hover .publication-arrow {
     }
 
     .site-header {
+        min-height: auto;
+
         align-items: flex-start;
 
         padding:
             22px
             0;
-
-        min-height: auto;
     }
 
     .site-name {
@@ -1480,17 +1390,17 @@ a.publication:hover .publication-arrow {
     }
 
     .section-heading {
+        margin:
+            24px
+            0
+            48px;
+
         font-size:
             clamp(
                 2.7rem,
                 12vw,
                 4rem
             );
-
-        margin:
-            24px
-            0
-            48px;
     }
 
     .project {
