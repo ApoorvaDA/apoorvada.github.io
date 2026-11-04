@@ -3,7 +3,6 @@
    ========================================================= */
 
 :root {
-
     --background: #f7f7f4;
     --surface: #ffffff;
 
@@ -16,7 +15,6 @@
     --accent-soft: #e7eeeb;
 
     --max-width: 1280px;
-
     --radius: 24px;
 }
 
@@ -31,17 +29,14 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
     margin: 0;
 
     background: var(--background);
-
     color: var(--text);
 
     font-family:
@@ -59,12 +54,10 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-
 img {
     display: block;
     max-width: 100%;
 }
-
 
 a {
     color: inherit;
@@ -79,7 +72,6 @@ a {
 .site-header,
 main > section,
 .site-footer {
-
     width: min(
         calc(100% - 64px),
         var(--max-width)
@@ -95,7 +87,6 @@ main > section,
    ========================================================= */
 
 .site-header {
-
     min-height: 88px;
 
     display: flex;
@@ -105,27 +96,20 @@ main > section,
     gap: 40px;
 }
 
-
 .site-name {
-
-    font-size: 1rem;
+    font-size: 1.22rem;
     font-weight: 700;
-
-    letter-spacing: -0.025em;
+    letter-spacing: -0.035em;
 }
 
-
 .site-nav {
-
     display: flex;
     align-items: center;
 
     gap: 36px;
 }
 
-
 .site-nav a {
-
     color: var(--muted);
 
     font-size: 0.93rem;
@@ -135,11 +119,8 @@ main > section,
         transform 180ms ease;
 }
 
-
 .site-nav a:hover {
-
     color: var(--text);
-
     transform: translateY(-1px);
 }
 
@@ -152,7 +133,6 @@ main > section,
 .hero-eyebrow,
 .project-number,
 .path-label {
-
     margin: 0;
 
     color: var(--accent);
@@ -161,13 +141,10 @@ main > section,
     font-weight: 700;
 
     letter-spacing: 0.14em;
-
     text-transform: uppercase;
 }
 
-
 .section-heading {
-
     margin:
         28px
         0
@@ -182,7 +159,6 @@ main > section,
     );
 
     line-height: 0.99;
-
     letter-spacing: -0.06em;
 
     font-weight: 650;
@@ -194,7 +170,6 @@ main > section,
    ========================================================= */
 
 .hero {
-
     min-height: calc(100vh - 88px);
 
     display: flex;
@@ -208,9 +183,7 @@ main > section,
     border-bottom: 1px solid var(--border);
 }
 
-
 .hero-grid {
-
     width: 100%;
 
     display: grid;
@@ -228,51 +201,47 @@ main > section,
     align-items: center;
 }
 
-
 .hero-content {
-
     max-width: 900px;
 }
 
-
 .hero-eyebrow {
-
     margin-bottom: 22px;
 }
 
 
-.hero h1 {
+/*
+   Slightly reduced from the previous hero size.
+   This keeps the editorial impact without overwhelming
+   the rest of the first screen.
+*/
 
+.hero h1 {
     margin: 0;
 
-    max-width: 950px;
+    max-width: 900px;
 
     font-size: clamp(
-        3.7rem,
-        6.1vw,
-        6.5rem
+        3.4rem,
+        5.4vw,
+        5.8rem
     );
 
-    line-height: 0.93;
-
-    letter-spacing: -0.068em;
+    line-height: 0.96;
+    letter-spacing: -0.062em;
 
     font-weight: 650;
 }
 
-
 .hero h1 span {
-
     color: var(--accent);
 }
 
-
 .hero-intro {
-
     max-width: 760px;
 
     margin:
-        42px
+        36px
         0
         0;
 
@@ -287,9 +256,7 @@ main > section,
     line-height: 1.65;
 }
 
-
 .hero-actions {
-
     display: flex;
     flex-wrap: wrap;
 
@@ -298,10 +265,8 @@ main > section,
     margin-top: 36px;
 }
 
-
 .primary-button,
 .secondary-button {
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -322,26 +287,18 @@ main > section,
         background 180ms ease;
 }
 
-
 .primary-button {
-
     background: var(--text);
-
     color: white;
 }
 
-
 .secondary-button {
-
     border: 1px solid var(--text);
-
     background: transparent;
 }
 
-
 .primary-button:hover,
 .secondary-button:hover {
-
     transform: translateY(-2px);
 }
 
@@ -351,11 +308,9 @@ main > section,
    ========================================================= */
 
 .hero-visual {
-
     position: relative;
 
     aspect-ratio: 0.82;
-
     min-height: 460px;
 
     overflow: hidden;
@@ -370,9 +325,7 @@ main > section,
         );
 }
 
-
 .visual-label {
-
     position: absolute;
 
     top: 28px;
@@ -386,22 +339,14 @@ main > section,
     letter-spacing: 0.17em;
 }
 
-
 .visual-orbit {
-
     position: absolute;
 
-    border:
-        1px
-        solid
-        rgba(49, 92, 82, 0.32);
-
+    border: 1px solid rgba(49, 92, 82, 0.32);
     border-radius: 50%;
 }
 
-
 .orbit-one {
-
     width: 72%;
     aspect-ratio: 1;
 
@@ -409,9 +354,7 @@ main > section,
     left: 14%;
 }
 
-
 .orbit-two {
-
     width: 52%;
     aspect-ratio: 1;
 
@@ -419,9 +362,7 @@ main > section,
     left: 24%;
 }
 
-
 .orbit-three {
-
     width: 32%;
     aspect-ratio: 1;
 
@@ -429,9 +370,7 @@ main > section,
     left: 34%;
 }
 
-
 .visual-core {
-
     position: absolute;
 
     width: 18px;
@@ -451,9 +390,7 @@ main > section,
         0 0 0 34px rgba(49, 92, 82, 0.04);
 }
 
-
 .visual-caption {
-
     position: absolute;
 
     left: 30px;
@@ -464,7 +401,6 @@ main > section,
     color: var(--muted);
 
     font-size: 0.86rem;
-
     line-height: 1.5;
 }
 
@@ -474,7 +410,6 @@ main > section,
    ========================================================= */
 
 .work-section {
-
     padding:
         130px
         0
@@ -483,9 +418,7 @@ main > section,
     border-bottom: 1px solid var(--border);
 }
 
-
 .project-list {
-
     display: flex;
     flex-direction: column;
 
@@ -498,7 +431,6 @@ main > section,
    ========================================================= */
 
 .project {
-
     display: grid;
 
     grid-template-columns:
@@ -509,11 +441,7 @@ main > section,
 
     overflow: hidden;
 
-    border:
-        1px
-        solid
-        var(--border);
-
+    border: 1px solid var(--border);
     border-radius: var(--radius);
 
     background: var(--surface);
@@ -522,9 +450,7 @@ main > section,
         0 18px 55px rgba(0, 0, 0, 0.035);
 }
 
-
 .project-content {
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -533,15 +459,11 @@ main > section,
         clamp(52px, 6vw, 82px);
 }
 
-
 .project-number {
-
     margin-bottom: 36px;
 }
 
-
 .project h3 {
-
     max-width: 620px;
 
     margin: 0;
@@ -553,28 +475,22 @@ main > section,
     );
 
     line-height: 0.98;
-
     letter-spacing: -0.058em;
 
     font-weight: 650;
 }
 
-
 .project-result {
-
     margin:
         30px
         0
         0;
 
     font-weight: 650;
-
     font-size: 1rem;
 }
 
-
 .project-description {
-
     max-width: 610px;
 
     margin:
@@ -585,13 +501,10 @@ main > section,
     color: var(--muted);
 
     font-size: 1rem;
-
     line-height: 1.7;
 }
 
-
 .project-tech {
-
     display: flex;
     flex-wrap: wrap;
 
@@ -600,9 +513,7 @@ main > section,
     margin-top: 28px;
 }
 
-
 .project-tech span {
-
     display: inline-flex;
     align-items: center;
 
@@ -612,11 +523,7 @@ main > section,
         0
         14px;
 
-    border:
-        1px
-        solid
-        var(--border);
-
+    border: 1px solid var(--border);
     border-radius: 999px;
 
     color: var(--muted);
@@ -625,27 +532,19 @@ main > section,
     font-weight: 650;
 }
 
-
 .project-link {
-
     width: fit-content;
 
     margin-top: 36px;
-
     padding-bottom: 3px;
 
-    border-bottom:
-        1px
-        solid
-        var(--text);
+    border-bottom: 1px solid var(--text);
 
     font-size: 0.88rem;
     font-weight: 700;
 }
 
-
 .project-link span {
-
     display: inline-block;
 
     transition:
@@ -654,14 +553,8 @@ main > section,
         ease;
 }
 
-
 .project-link:hover span {
-
-    transform:
-        translate(
-            3px,
-            -3px
-        );
+    transform: translate(3px, -3px);
 }
 
 
@@ -670,7 +563,6 @@ main > section,
    ========================================================= */
 
 .project-visual {
-
     position: relative;
 
     min-width: 0;
@@ -679,9 +571,7 @@ main > section,
     overflow: hidden;
 }
 
-
 .visual-index {
-
     position: absolute;
 
     z-index: 4;
@@ -697,13 +587,7 @@ main > section,
     color: var(--accent);
 }
 
-
-/* =========================================================
-   IMAGE PROJECTS
-   ========================================================= */
-
 .image-project-visual {
-
     display: flex;
 
     align-items: center;
@@ -715,32 +599,41 @@ main > section,
    BIOHUB VISUAL
    ========================================================= */
 
+/*
+   The embryo source image contains text near its upper edge.
+   We deliberately enlarge and shift the image upward so the
+   card concentrates on the embryo rather than the embedded
+   presentation heading.
+*/
+
 .biohub-visual {
+    position: relative;
+
+    overflow: hidden;
 
     background: #060c17;
 }
 
-
 .biohub-visual img {
-
     position: absolute;
 
-    inset: 0;
+    width: 112%;
+    height: 112%;
 
-    width: 100%;
-    height: 100%;
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -46%);
 
     object-fit: cover;
     object-position: center;
 }
 
-
 .biohub-visual::after {
-
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     z-index: 2;
@@ -750,14 +643,13 @@ main > section,
     background:
         linear-gradient(
             to top,
-            rgba(3, 8, 15, 0.42) 0%,
-            rgba(3, 8, 15, 0) 32%
+            rgba(3, 8, 15, 0.58) 0%,
+            rgba(3, 8, 15, 0.10) 17%,
+            rgba(3, 8, 15, 0) 34%
         );
 }
 
-
 .biohub-visual .visual-index {
-
     color: #91d9d3;
 }
 
@@ -767,13 +659,10 @@ main > section,
    ========================================================= */
 
 .brain-visual {
-
     background: #000;
 }
 
-
 .brain-visual img {
-
     position: absolute;
 
     inset: 0;
@@ -787,13 +676,10 @@ main > section,
     padding: 46px;
 }
 
-
 .brain-visual::after {
-
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     z-index: 2;
@@ -808,9 +694,7 @@ main > section,
         );
 }
 
-
 .brain-visual .visual-index {
-
     color: #a8d6cc;
 }
 
@@ -820,7 +704,6 @@ main > section,
    ========================================================= */
 
 .neurogolf-visual {
-
     display: flex;
 
     align-items: center;
@@ -834,9 +717,7 @@ main > section,
         );
 }
 
-
 .arc-demo {
-
     display: flex;
 
     align-items: center;
@@ -848,9 +729,7 @@ main > section,
     );
 }
 
-
 .arc-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -862,35 +741,24 @@ main > section,
     gap: 5px;
 }
 
-
 .arc-grid span {
-
     display: block;
 
-    border:
-        1px
-        solid
-        #bfc5c4;
+    border: 1px solid #bfc5c4;
 
     background:
         rgba(255, 255, 255, 0.55);
 }
 
-
 .arc-grid span.active {
-
     border-color: var(--accent);
-
     background: var(--accent);
 }
 
-
 .arc-arrow {
-
     color: var(--accent);
 
     font-size: 3rem;
-
     font-weight: 300;
 }
 
@@ -900,7 +768,6 @@ main > section,
    ========================================================= */
 
 .about-section {
-
     padding:
         135px
         0
@@ -909,9 +776,7 @@ main > section,
     border-bottom: 1px solid var(--border);
 }
 
-
 .about-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -930,9 +795,7 @@ main > section,
         105px;
 }
 
-
 .about-heading h2 {
-
     margin: 0;
 
     max-width: 720px;
@@ -944,36 +807,28 @@ main > section,
     );
 
     line-height: 1;
-
     letter-spacing: -0.058em;
 
     font-weight: 650;
 }
 
-
 .about-story {
-
     max-width: 590px;
 
     color: var(--muted);
 }
 
-
 .about-story p {
-
     margin:
         0
         0
         24px;
 }
 
-
 .about-story .about-lead {
-
     color: var(--text);
 
     font-size: 1.18rem;
-
     line-height: 1.65;
 }
 
@@ -983,26 +838,16 @@ main > section,
    ========================================================= */
 
 .about-path {
-
     display: grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    border-top:
-        1px
-        solid
-        var(--border);
-
-    border-bottom:
-        1px
-        solid
-        var(--border);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
-
 .path-item {
-
     display: grid;
 
     grid-template-columns:
@@ -1016,37 +861,26 @@ main > section,
         34px
         42px;
 
-    border-right:
-        1px
-        solid
-        var(--border);
+    border-right: 1px solid var(--border);
 }
 
-
 .path-item:last-child {
-
     border-right: 0;
 }
 
-
 .path-number {
-
     color: var(--muted);
 
     font-size: 0.75rem;
 }
 
-
 .path-label {
-
     display: block;
 
     margin-bottom: 13px;
 }
 
-
 .path-item h3 {
-
     margin: 0;
 
     font-size: 1.3rem;
@@ -1054,9 +888,7 @@ main > section,
     letter-spacing: -0.025em;
 }
 
-
 .path-item p {
-
     margin:
         12px
         0
@@ -1065,7 +897,6 @@ main > section,
     color: var(--muted);
 
     font-size: 0.84rem;
-
     line-height: 1.55;
 }
 
@@ -1075,30 +906,19 @@ main > section,
    ========================================================= */
 
 .experience-section {
-
     padding:
         130px
         0
         145px;
 
-    border-bottom:
-        1px
-        solid
-        var(--border);
+    border-bottom: 1px solid var(--border);
 }
-
 
 .experience-list {
-
-    border-top:
-        1px
-        solid
-        var(--border);
+    border-top: 1px solid var(--border);
 }
 
-
 .experience-item {
-
     display: grid;
 
     grid-template-columns:
@@ -1112,15 +932,10 @@ main > section,
         0
         50px;
 
-    border-bottom:
-        1px
-        solid
-        var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
-
 .experience-meta {
-
     display: flex;
     flex-direction: column;
 
@@ -1133,9 +948,7 @@ main > section,
     font-size: 0.83rem;
 }
 
-
 .experience-main {
-
     max-width: 900px;
 
     transition:
@@ -1144,15 +957,11 @@ main > section,
         ease;
 }
 
-
 .experience-item:hover .experience-main {
-
     transform: translateX(10px);
 }
 
-
 .experience-main h3 {
-
     margin: 0;
 
     font-size: clamp(
@@ -1162,13 +971,10 @@ main > section,
     );
 
     line-height: 1.15;
-
     letter-spacing: -0.04em;
 }
 
-
 .experience-role {
-
     margin:
         13px
         0
@@ -1179,9 +985,7 @@ main > section,
     font-size: 0.95rem;
 }
 
-
 .experience-summary {
-
     max-width: 760px;
 
     margin:
@@ -1192,13 +996,10 @@ main > section,
     color: var(--muted);
 
     font-size: 0.94rem;
-
     line-height: 1.65;
 }
 
-
 .experience-tags {
-
     display: flex;
     flex-wrap: wrap;
 
@@ -1207,18 +1008,12 @@ main > section,
     margin-top: 22px;
 }
 
-
 .experience-tags span {
-
     padding:
         6px
         11px;
 
-    border:
-        1px
-        solid
-        var(--border);
-
+    border: 1px solid var(--border);
     border-radius: 999px;
 
     color: var(--muted);
@@ -1233,30 +1028,19 @@ main > section,
    ========================================================= */
 
 .research-section {
-
     padding:
         130px
         0
         145px;
 
-    border-bottom:
-        1px
-        solid
-        var(--border);
+    border-bottom: 1px solid var(--border);
 }
-
 
 .publication-list {
-
-    border-top:
-        1px
-        solid
-        var(--border);
+    border-top: 1px solid var(--border);
 }
 
-
 .publication {
-
     display: grid;
 
     grid-template-columns:
@@ -1273,30 +1057,21 @@ main > section,
         0
         42px;
 
-    border-bottom:
-        1px
-        solid
-        var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
-
 a.publication {
-
     transition:
         padding-left
         180ms
         ease;
 }
 
-
 a.publication:hover {
-
     padding-left: 12px;
 }
 
-
 .publication-meta {
-
     display: flex;
     flex-direction: column;
 
@@ -1305,29 +1080,21 @@ a.publication:hover {
     font-size: 0.75rem;
 }
 
-
 .publication-meta span:first-child {
-
     color: var(--accent);
 
     font-weight: 700;
 }
 
-
 .publication-meta span:last-child {
-
     color: var(--muted);
 }
 
-
 .publication-main {
-
     max-width: 800px;
 }
 
-
 .publication-main h3 {
-
     margin: 0;
 
     font-size: clamp(
@@ -1337,13 +1104,10 @@ a.publication:hover {
     );
 
     line-height: 1.28;
-
     letter-spacing: -0.035em;
 }
 
-
 .publication-main p {
-
     max-width: 690px;
 
     margin:
@@ -1354,13 +1118,10 @@ a.publication:hover {
     color: var(--muted);
 
     font-size: 0.84rem;
-
     line-height: 1.6;
 }
 
-
 .publication-arrow {
-
     color: var(--accent);
 
     font-size: 1.15rem;
@@ -1371,9 +1132,7 @@ a.publication:hover {
         ease;
 }
 
-
 a.publication:hover .publication-arrow {
-
     transform:
         translate(
             3px,
@@ -1382,27 +1141,18 @@ a.publication:hover .publication-arrow {
 }
 
 
-.publication-arrow-muted {
-
-    color: var(--border);
-}
-
-
 /* =========================================================
    CONTACT
    ========================================================= */
 
 .contact-section {
-
     padding:
         130px
         0
         145px;
 }
 
-
 .contact-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -1418,9 +1168,7 @@ a.publication:hover .publication-arrow {
     margin-top: 42px;
 }
 
-
 .contact-grid h2 {
-
     margin: 0;
 
     font-size: clamp(
@@ -1430,35 +1178,27 @@ a.publication:hover .publication-arrow {
     );
 
     line-height: 0.92;
-
     letter-spacing: -0.07em;
 
     font-weight: 650;
 }
 
-
 .contact-content {
-
     max-width: 520px;
 
     padding-top: 10px;
 }
 
-
 .contact-content p {
-
     margin: 0;
 
     color: var(--muted);
 
     font-size: 1.05rem;
-
     line-height: 1.7;
 }
 
-
 .contact-links {
-
     display: flex;
     flex-wrap: wrap;
 
@@ -1467,15 +1207,10 @@ a.publication:hover .publication-arrow {
     margin-top: 34px;
 }
 
-
 .contact-links a {
-
     padding-bottom: 3px;
 
-    border-bottom:
-        1px
-        solid
-        var(--text);
+    border-bottom: 1px solid var(--text);
 
     font-size: 0.9rem;
     font-weight: 700;
@@ -1487,7 +1222,6 @@ a.publication:hover .publication-arrow {
    ========================================================= */
 
 .site-footer {
-
     min-height: 100px;
 
     display: flex;
@@ -1497,28 +1231,21 @@ a.publication:hover .publication-arrow {
 
     gap: 30px;
 
-    border-top:
-        1px
-        solid
-        var(--border);
+    border-top: 1px solid var(--border);
 
     color: var(--muted);
 
     font-size: 0.78rem;
 }
 
-
 .site-footer a {
-
     transition:
         color
         180ms
         ease;
 }
 
-
 .site-footer a:hover {
-
     color: var(--text);
 }
 
@@ -1530,74 +1257,48 @@ a.publication:hover .publication-arrow {
 @media (max-width: 1000px) {
 
     .hero-grid {
-
         grid-template-columns: 1fr;
 
         gap: 60px;
     }
 
-
     .hero {
-
         min-height: auto;
     }
 
-
     .hero-visual {
-
         min-height: 360px;
 
         aspect-ratio: 16 / 8;
 
         border-left: 0;
-
-        border-top:
-            1px
-            solid
-            var(--border);
+        border-top: 1px solid var(--border);
     }
 
-
     .project {
-
         min-height: 500px;
     }
 
-
     .project-content {
-
         padding: 48px;
     }
 
-
     .about-grid {
-
         gap: 70px;
     }
 
-
     .about-path {
-
         grid-template-columns: 1fr;
     }
 
-
     .path-item {
-
         border-right: 0;
-
-        border-bottom:
-            1px
-            solid
-            var(--border);
+        border-bottom: 1px solid var(--border);
     }
-
 
     .path-item:last-child {
-
         border-bottom: 0;
     }
-
 }
 
 
@@ -1610,7 +1311,6 @@ a.publication:hover .publication-arrow {
     .site-header,
     main > section,
     .site-footer {
-
         width:
             min(
                 calc(100% - 36px),
@@ -1618,67 +1318,49 @@ a.publication:hover .publication-arrow {
             );
     }
 
-
     .site-header {
-
         min-height: 76px;
     }
 
-
     .site-nav {
-
         gap: 17px;
     }
 
-
     .site-nav a {
-
         font-size: 0.78rem;
     }
 
-
     .hero {
-
         padding:
             70px
             0
             90px;
     }
 
-
     .hero h1 {
-
         font-size:
             clamp(
-                3.3rem,
-                13vw,
-                5rem
+                3.15rem,
+                12vw,
+                4.7rem
             );
     }
 
-
     .hero-visual {
-
         display: none;
     }
 
-
     .section-heading {
-
         margin-bottom: 52px;
     }
 
-
     .project {
-
         grid-template-columns: 1fr;
 
         min-height: auto;
     }
 
-
     .project-content {
-
         min-height: 470px;
 
         padding:
@@ -1686,72 +1368,47 @@ a.publication:hover .publication-arrow {
             38px;
     }
 
-
     .project-visual {
-
         min-height: 430px;
     }
 
-
-    /*
-       Reorder the brain project so the text appears
-       before the image on smaller screens.
-    */
-
     .project-brain .project-content {
-
         order: 1;
     }
 
-
     .project-brain .project-visual {
-
         order: 2;
     }
 
-
     .brain-visual img {
-
         padding: 34px;
     }
 
-
     .about-grid {
-
         grid-template-columns: 1fr;
 
         margin-bottom: 75px;
     }
 
-
     .about-heading h2 {
-
         max-width: 700px;
     }
-
 
     .about-story {
-
         max-width: 700px;
     }
 
-
     .experience-item {
-
         grid-template-columns: 1fr;
 
         gap: 20px;
     }
 
-
     .experience-item:hover .experience-main {
-
         transform: none;
     }
 
-
     .publication {
-
         grid-template-columns:
             1fr
             28px;
@@ -1761,23 +1418,18 @@ a.publication:hover .publication-arrow {
             24px;
     }
 
-
     .publication-meta {
-
         grid-column:
             1
             /
             -1;
     }
 
-
     .contact-grid {
-
         grid-template-columns: 1fr;
 
         gap: 45px;
     }
-
 }
 
 
@@ -1788,13 +1440,10 @@ a.publication:hover .publication-arrow {
 @media (max-width: 600px) {
 
     body {
-
         font-size: 16px;
     }
 
-
     .site-header {
-
         align-items: flex-start;
 
         padding:
@@ -1804,39 +1453,33 @@ a.publication:hover .publication-arrow {
         min-height: auto;
     }
 
+    .site-name {
+        font-size: 1.15rem;
+    }
 
     .site-nav {
-
         display: none;
     }
 
-
     .hero h1 {
-
         letter-spacing: -0.06em;
     }
 
-
     .hero-intro {
-
-        margin-top: 32px;
+        margin-top: 30px;
     }
-
 
     .work-section,
     .about-section,
     .experience-section,
     .research-section,
     .contact-section {
-
         padding:
             90px
             0;
     }
 
-
     .section-heading {
-
         font-size:
             clamp(
                 2.7rem,
@@ -1850,15 +1493,11 @@ a.publication:hover .publication-arrow {
             48px;
     }
 
-
     .project {
-
         border-radius: 18px;
     }
 
-
     .project-content {
-
         min-height: auto;
 
         padding:
@@ -1867,15 +1506,11 @@ a.publication:hover .publication-arrow {
             52px;
     }
 
-
     .project-number {
-
         margin-bottom: 26px;
     }
 
-
     .project h3 {
-
         font-size:
             clamp(
                 2.5rem,
@@ -1884,42 +1519,34 @@ a.publication:hover .publication-arrow {
             );
     }
 
-
     .project-description {
-
         margin-top: 24px;
     }
 
-
     .project-visual {
-
         min-height: 340px;
     }
 
-
     .biohub-visual img {
+        width: 118%;
+        height: 118%;
 
-        object-position: center;
+        transform:
+            translate(-50%, -45%);
     }
 
-
     .brain-visual img {
-
         padding: 28px;
     }
 
-
     .visual-index {
-
         left: 24px;
         bottom: 21px;
 
         font-size: 0.58rem;
     }
 
-
     .arc-grid {
-
         grid-template-columns:
             repeat(3, 31px);
 
@@ -1927,30 +1554,22 @@ a.publication:hover .publication-arrow {
             repeat(3, 31px);
     }
 
-
     .arc-demo {
-
         gap: 20px;
     }
 
-
     .arc-arrow {
-
         font-size: 2.2rem;
     }
 
-
     .about-grid {
-
         margin:
             36px
             0
             65px;
     }
 
-
     .about-heading h2 {
-
         font-size:
             clamp(
                 2.6rem,
@@ -1959,39 +1578,29 @@ a.publication:hover .publication-arrow {
             );
     }
 
-
     .path-item {
-
         padding:
             30px
             10px;
     }
 
-
     .experience-item {
-
         padding:
             36px
             0;
     }
 
-
     .publication {
-
         padding:
             32px
             0;
     }
 
-
     a.publication:hover {
-
         padding-left: 0;
     }
 
-
     .contact-grid h2 {
-
         font-size:
             clamp(
                 3.7rem,
@@ -2000,10 +1609,7 @@ a.publication:hover .publication-arrow {
             );
     }
 
-
     .site-footer {
-
         min-height: 90px;
     }
-
 }
