@@ -63,6 +63,7 @@ a {
 }
 
 img {
+    display: block;
     max-width: 100%;
 }
 
@@ -432,11 +433,89 @@ section {
 
 
 /* =========================================================
-   SHARED PROJECT TYPOGRAPHY
+   PROJECT CARDS
    ========================================================= */
 
+.project {
+    display: grid;
+
+    min-height: 480px;
+
+    overflow: hidden;
+
+    margin-bottom: 32px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    transition:
+        transform 200ms ease,
+        box-shadow 200ms ease;
+}
+
+.project:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 22px 55px rgba(0, 0, 0, 0.05);
+}
+
+
+/*
+   Biohub:
+   text left / visual right
+*/
+
+.project-biohub {
+    grid-template-columns:
+        1.05fr
+        0.95fr;
+}
+
+
+/*
+   Whole-brain:
+   visual left / text right
+*/
+
+.project-brain {
+    grid-template-columns:
+        0.95fr
+        1.05fr;
+}
+
+
+/*
+   Neurogolf:
+   text left / visual right
+*/
+
+.project-neurogolf {
+    grid-template-columns:
+        1.05fr
+        0.95fr;
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+   ========================================================= */
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-width: 0;
+
+    padding: 58px;
+}
+
 .project-number {
-    margin: 0 0 34px;
+    margin: 0 0 32px;
 
     color: var(--accent);
 
@@ -445,7 +524,20 @@ section {
 
     line-height: 1.55;
     letter-spacing: 0.1em;
+
     text-transform: uppercase;
+}
+
+.project-content h3 {
+    max-width: 620px;
+
+    margin: 0 0 22px;
+
+    font-size: clamp(42px, 3.8vw, 60px);
+    font-weight: 550;
+
+    line-height: 1.03;
+    letter-spacing: -0.05em;
 }
 
 .project-result {
@@ -478,6 +570,8 @@ section {
     flex-wrap: wrap;
 
     gap: 8px;
+
+    margin-bottom: 30px;
 }
 
 .project-tech span {
@@ -493,6 +587,11 @@ section {
     border: 1px solid var(--border);
     border-radius: 999px;
 }
+
+
+/* =========================================================
+   PROJECT LINKS
+   ========================================================= */
 
 .project-link {
     display: inline-block;
@@ -523,102 +622,44 @@ section {
 
 
 /* =========================================================
-   BIOHUB FEATURE
+   SHARED PROJECT VISUAL
    ========================================================= */
 
-.biohub-feature {
-    display: grid;
-
-    grid-template-columns:
-        minmax(430px, 0.9fr)
-        minmax(0, 1.35fr);
-
-    min-height: 650px;
-
-    margin-bottom: 32px;
-
-    overflow: hidden;
-
-    background: var(--white);
-
-    border: 1px solid var(--border);
-    border-radius: 24px;
-
-    transition:
-        transform 200ms ease,
-        box-shadow 200ms ease;
-}
-
-.biohub-feature:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 22px 55px rgba(0, 0, 0, 0.05);
-}
-
-
-/* ---------- Biohub content ---------- */
-
-.biohub-content {
-    position: relative;
-
-    z-index: 2;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-
-    min-width: 0;
-
-    padding: 54px 48px;
-}
-
-.biohub-content .project-number {
-    max-width: 420px;
-
-    margin-bottom: 38px;
-}
-
-.biohub-content h3 {
-    margin: 0 0 28px;
-
-    font-size: clamp(46px, 4vw, 62px);
-    font-weight: 550;
-
-    line-height: 1;
-    letter-spacing: -0.055em;
-}
-
-.biohub-content .project-result {
-    margin-bottom: 22px;
-}
-
-.biohub-content .project-description {
-    max-width: 470px;
-
-    margin-bottom: 28px;
-}
-
-.biohub-content .project-tech {
-    margin-bottom: 34px;
-}
-
-
-/* ---------- Biohub image ---------- */
-
-.biohub-figure {
+.project-visual {
     position: relative;
 
     min-width: 0;
-    min-height: 650px;
+    min-height: 480px;
 
     overflow: hidden;
+}
 
+.visual-index {
+    position: absolute;
+
+    left: 26px;
+    bottom: 24px;
+
+    z-index: 5;
+
+    color: var(--accent);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+}
+
+
+/* =========================================================
+   BIOHUB VISUAL
+   ========================================================= */
+
+.biohub-visual {
     background: #070d18;
 }
 
-.biohub-figure img {
+.biohub-visual img {
     position: absolute;
 
     inset: 0;
@@ -629,125 +670,34 @@ section {
     object-fit: cover;
 
     /*
-       The original image includes a large project title at the
-       bottom. This positioning emphasizes the actual microscopy
-       visualization instead.
+       The source image contains the project title toward the
+       bottom. This crop emphasizes the actual microscopy data.
     */
-    object-position: 56% 18%;
+
+    object-position: 52% 18%;
 }
 
-.biohub-figure::after {
+.biohub-visual::after {
     content: "";
 
     position: absolute;
     inset: 0;
 
+    z-index: 2;
+
     pointer-events: none;
 
-    box-shadow:
-        inset 1px 0 0 rgba(255, 255, 255, 0.08);
+    background:
+        linear-gradient(
+            to top,
+            rgba(5, 10, 20, 0.45) 0%,
+            rgba(5, 10, 20, 0.08) 18%,
+            rgba(5, 10, 20, 0) 35%
+        );
 }
 
-
-/* =========================================================
-   STANDARD PROJECT CARDS
-   ========================================================= */
-
-.project {
-    overflow: hidden;
-
-    margin-bottom: 32px;
-
-    background: var(--white);
-
-    border: 1px solid var(--border);
-    border-radius: 24px;
-
-    transition:
-        transform 200ms ease,
-        box-shadow 200ms ease;
-}
-
-.project:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 22px 55px rgba(0, 0, 0, 0.05);
-}
-
-.project-brain,
-.project-neurogolf {
-    display: grid;
-
-    min-height: 500px;
-}
-
-.project-brain {
-    grid-template-columns:
-        0.95fr
-        1.05fr;
-}
-
-.project-neurogolf {
-    grid-template-columns:
-        1.05fr
-        0.95fr;
-}
-
-.project-content {
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-
-    min-width: 0;
-
-    padding: 58px;
-}
-
-.project-content h3 {
-    max-width: 620px;
-
-    margin: 0 0 20px;
-
-    font-size: clamp(42px, 3.8vw, 60px);
-    font-weight: 550;
-
-    line-height: 1.03;
-    letter-spacing: -0.05em;
-}
-
-.project-content .project-tech {
-    margin-bottom: 30px;
-}
-
-
-/* =========================================================
-   PROJECT VISUALS
-   ========================================================= */
-
-.project-visual {
-    position: relative;
-
-    min-height: 500px;
-
-    overflow: hidden;
-}
-
-.visual-index {
-    position: absolute;
-
-    left: 24px;
-    bottom: 22px;
-
-    z-index: 10;
-
-    color: var(--accent);
-
-    font-size: 10px;
-    font-weight: 700;
-
-    letter-spacing: 0.1em;
+.biohub-visual .visual-index {
+    color: #8dd6d8;
 }
 
 
@@ -781,7 +731,8 @@ section {
     width: 52%;
     height: 36%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 }
 
 .brain-ring-two {
@@ -811,7 +762,8 @@ section {
     width: 16px;
     height: 16px;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
@@ -1073,6 +1025,7 @@ section {
     font-weight: 700;
 
     letter-spacing: 0.08em;
+
     text-transform: uppercase;
 }
 
@@ -1314,7 +1267,7 @@ footer p {
 
 @media (max-width: 1000px) {
 
-    /* Hero */
+    /* HERO */
 
     .hero-grid {
         grid-template-columns: 1fr;
@@ -1325,42 +1278,22 @@ footer p {
     }
 
 
-    /* Biohub */
+    /* PROJECTS */
 
-    .biohub-feature {
-        grid-template-columns: 1fr;
-
-        min-height: auto;
-    }
-
-    .biohub-content {
-        padding: 50px;
-    }
-
-    .biohub-content h3 br {
-        display: none;
-    }
-
-    .biohub-figure {
-        min-height: 0;
-
-        aspect-ratio: 16 / 9;
-    }
-
-    .biohub-figure img {
-        object-position: 55% 18%;
-    }
-
-
-    /* Other projects */
-
+    .project-biohub,
     .project-brain,
     .project-neurogolf {
         grid-template-columns: 1fr;
     }
 
-    .project-visual {
-        min-height: 380px;
+    .project-biohub .project-content,
+    .project-neurogolf .project-content {
+        order: 1;
+    }
+
+    .project-biohub .project-visual,
+    .project-neurogolf .project-visual {
+        order: 2;
     }
 
     .project-brain .project-content {
@@ -1371,8 +1304,16 @@ footer p {
         order: 2;
     }
 
+    .project-visual {
+        min-height: 380px;
+    }
 
-    /* About */
+    .biohub-visual img {
+        object-position: 52% 18%;
+    }
+
+
+    /* ABOUT */
 
     .about-grid {
         grid-template-columns: 1fr;
@@ -1400,7 +1341,7 @@ footer p {
     }
 
 
-    /* Navigation */
+    /* NAVIGATION */
 
     .nav-links {
         gap: 16px;
@@ -1412,7 +1353,7 @@ footer p {
     }
 
 
-    /* Hero */
+    /* HERO */
 
     #home {
         min-height: auto;
@@ -1431,7 +1372,7 @@ footer p {
     }
 
 
-    /* Section headings */
+    /* SECTION HEADINGS */
 
     #work > h2,
     #experience > h2,
@@ -1448,36 +1389,11 @@ footer p {
     }
 
 
-    /* Biohub */
+    /* PROJECT CARDS */
 
-    .biohub-content {
-        padding: 38px 26px 42px;
+    .project {
+        min-height: auto;
     }
-
-    .biohub-content .project-number {
-        margin-bottom: 28px;
-    }
-
-    .biohub-content h3 {
-        margin-bottom: 24px;
-
-        font-size: 42px;
-    }
-
-    .biohub-content .project-description {
-        font-size: 15px;
-    }
-
-    .biohub-figure {
-        aspect-ratio: 4 / 3;
-    }
-
-    .biohub-figure img {
-        object-position: 55% 15%;
-    }
-
-
-    /* Standard projects */
 
     .project-content {
         padding: 38px 26px;
@@ -1487,9 +1403,20 @@ footer p {
         font-size: 40px;
     }
 
-    .project-visual {
-        min-height: 300px;
+    .project-description {
+        font-size: 15px;
     }
+
+    .project-visual {
+        min-height: 320px;
+    }
+
+    .biohub-visual img {
+        object-position: 52% 15%;
+    }
+
+
+    /* NEUROGOLF */
 
     .arc-grid {
         grid-template-columns:
@@ -1500,7 +1427,7 @@ footer p {
     }
 
 
-    /* About */
+    /* ABOUT */
 
     .about-path {
         grid-template-columns: 1fr;
@@ -1522,7 +1449,7 @@ footer p {
     }
 
 
-    /* Experience */
+    /* EXPERIENCE */
 
     .experience-item {
         grid-template-columns: 1fr;
@@ -1537,7 +1464,7 @@ footer p {
     }
 
 
-    /* Research */
+    /* RESEARCH */
 
     .publication {
         grid-template-columns:
@@ -1582,12 +1509,12 @@ footer p {
         align-items: flex-start;
     }
 
-    .biohub-content h3 {
-        font-size: 38px;
-    }
-
     .project-content h3 {
         font-size: 36px;
+    }
+
+    .project-number {
+        margin-bottom: 24px;
     }
 
 }
