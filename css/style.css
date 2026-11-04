@@ -5,11 +5,15 @@
 :root {
     --bg: #f7f7f4;
     --white: #ffffff;
+
     --text: #171717;
     --muted: #70706c;
     --light: #999994;
+
     --border: #deded8;
+
     --accent: #315f55;
+
     --max: 1280px;
 }
 
@@ -28,6 +32,7 @@ html {
 
 body {
     margin: 0;
+
     background: var(--bg);
     color: var(--text);
 
@@ -71,6 +76,7 @@ footer {
 
 section {
     padding: 120px 0;
+
     border-bottom: 1px solid var(--border);
 }
 
@@ -85,6 +91,7 @@ section {
 
 .site-header nav {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 }
@@ -92,17 +99,22 @@ section {
 .site-name {
     font-size: 17px;
     font-weight: 700;
+
     letter-spacing: -0.02em;
 }
 
 .nav-links {
     display: flex;
+
     gap: 32px;
 }
 
 .nav-links a {
     color: var(--muted);
+
     font-size: 15px;
+
+    transition: color 180ms ease;
 }
 
 .nav-links a:hover {
@@ -159,9 +171,13 @@ section {
     width: 100%;
 
     display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.55fr);
+
+    grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(300px, 0.55fr);
 
     gap: 80px;
+
     align-items: center;
 }
 
@@ -172,9 +188,9 @@ section {
 .hero-eyebrow {
     margin: 0 0 28px;
 
-    color: var(--accent) !important;
+    color: var(--accent);
 
-    font-size: 13px !important;
+    font-size: 13px;
     font-weight: 700;
 
     letter-spacing: 0.12em;
@@ -182,9 +198,9 @@ section {
 }
 
 #home h1 {
-    margin: 0 0 42px;
-
     max-width: 920px;
+
+    margin: 0 0 42px;
 
     font-size: clamp(66px, 7.2vw, 108px);
     font-weight: 600;
@@ -215,12 +231,14 @@ section {
 
 .hero-actions {
     display: flex;
-    gap: 12px;
     flex-wrap: wrap;
+
+    gap: 12px;
 }
 
 .hero-actions a {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -232,16 +250,37 @@ section {
 
     font-size: 15px;
     font-weight: 650;
+
+    transition:
+        transform 180ms ease,
+        background 180ms ease,
+        color 180ms ease;
+}
+
+.hero-actions a:hover {
+    transform: translateY(-2px);
 }
 
 .primary-button {
     background: var(--text);
     color: white;
+
     border: 1px solid var(--text);
+}
+
+.primary-button:hover {
+    background: var(--accent);
+
+    border-color: var(--accent);
 }
 
 .secondary-button {
     border: 1px solid var(--text);
+}
+
+.secondary-button:hover {
+    background: var(--text);
+    color: white;
 }
 
 
@@ -317,6 +356,10 @@ section {
     border-radius: 50%;
 
     background: var(--accent);
+
+    box-shadow:
+        0 0 0 16px rgba(49, 95, 85, 0.07),
+        0 0 0 34px rgba(49, 95, 85, 0.035);
 }
 
 .visual-orbit {
@@ -381,11 +424,15 @@ section {
 
 #work {
     padding-top: 125px;
+    padding-bottom: 130px;
 }
 
 .project {
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
+
+    grid-template-columns:
+        1.05fr
+        0.95fr;
 
     min-height: 500px;
 
@@ -397,18 +444,31 @@ section {
 
     border: 1px solid var(--border);
     border-radius: 24px;
+
+    transition:
+        transform 200ms ease,
+        box-shadow 200ms ease;
+}
+
+.project:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 22px 55px
+        rgba(0, 0, 0, 0.05);
 }
 
 .project-content {
     display: flex;
     flex-direction: column;
+
     justify-content: center;
 
     padding: 60px;
 }
 
 .project-number {
-    margin-bottom: 34px;
+    margin: 0 0 34px;
 
     color: var(--accent);
 
@@ -434,9 +494,10 @@ section {
 .project-result {
     margin: 0 0 20px;
 
-    color: var(--muted);
+    color: var(--text);
 
     font-size: 16px;
+    font-weight: 600;
 }
 
 .project-description {
@@ -481,10 +542,24 @@ section {
 .project-link {
     width: fit-content;
 
+    padding-bottom: 2px;
+
     font-size: 14px;
     font-weight: 650;
 
     border-bottom: 1px solid var(--text);
+}
+
+.project-link span {
+    display: inline-block;
+
+    margin-left: 4px;
+
+    transition: transform 180ms ease;
+}
+
+.project-link:hover span {
+    transform: translate(3px, -3px);
 }
 
 
@@ -494,8 +569,6 @@ section {
 
 .project-visual {
     position: relative;
-
-    display: block;
 
     min-height: 500px;
 
@@ -520,89 +593,28 @@ section {
 
 
 /* =========================================================
-   BIOHUB VISUAL
+   BIOHUB IMAGE
    ========================================================= */
 
-.biohub-visual {
-    background:
-        linear-gradient(
-            145deg,
-            #dbe8e3,
-            #eef3f0
-        );
+.biohub-image {
+    background: #070d18;
 }
 
-.biohub-visual::before {
-    content: "";
+.biohub-image img {
+    width: 100%;
+    height: 100%;
 
-    position: absolute;
-    inset: 0;
+    min-height: 500px;
 
-    background-image:
-        radial-gradient(
-            rgba(49, 95, 85, 0.17) 1px,
-            transparent 1px
-        );
+    display: block;
 
-    background-size: 22px 22px;
-}
-
-.cell {
-    position: absolute;
-
-    width: 22px;
-    height: 22px;
-
-    border-radius: 50%;
-
-    background: var(--accent);
-
-    box-shadow:
-        0 0 0 8px
-        rgba(49, 95, 85, 0.08);
-}
-
-.cell-a { left: 20%; top: 25%; }
-.cell-b { left: 48%; top: 34%; }
-.cell-c { left: 70%; top: 20%; }
-.cell-d { left: 30%; top: 65%; }
-.cell-e { left: 58%; top: 72%; }
-.cell-f { left: 77%; top: 52%; }
-
-.track {
-    position: absolute;
-
-    height: 1px;
-
-    background: rgba(49, 95, 85, 0.55);
-
-    transform-origin: left center;
-}
-
-.track-a {
-    width: 31%;
-    left: 22%;
-    top: 28%;
-    transform: rotate(20deg);
-}
-
-.track-b {
-    width: 35%;
-    left: 32%;
-    top: 67%;
-    transform: rotate(12deg);
-}
-
-.track-c {
-    width: 29%;
-    left: 50%;
-    top: 37%;
-    transform: rotate(-20deg);
+    object-fit: cover;
+    object-position: center;
 }
 
 
 /* =========================================================
-   BRAIN VISUAL
+   WHOLE-BRAIN VISUAL
    ========================================================= */
 
 .brain-visual {
@@ -631,7 +643,8 @@ section {
     width: 52%;
     height: 36%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 }
 
 .brain-ring-two {
@@ -661,7 +674,8 @@ section {
     width: 16px;
     height: 16px;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
@@ -697,6 +711,7 @@ section {
 
 .neurogolf-visual {
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -713,8 +728,11 @@ section {
 .arc-grid {
     display: grid;
 
-    grid-template-columns: repeat(3, 34px);
-    grid-template-rows: repeat(3, 34px);
+    grid-template-columns:
+        repeat(3, 34px);
+
+    grid-template-rows:
+        repeat(3, 34px);
 
     gap: 4px;
 }
@@ -727,6 +745,7 @@ section {
 
 .arc-grid span.active {
     background: var(--accent);
+
     border-color: var(--accent);
 }
 
@@ -805,7 +824,8 @@ section {
 .about-path {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
@@ -814,13 +834,14 @@ section {
 .path-item {
     display: grid;
 
-    grid-template-columns: 38px 1fr;
+    grid-template-columns:
+        38px 1fr;
 
     gap: 18px;
 
-    padding: 30px 28px;
-
     min-height: 185px;
+
+    padding: 30px 28px;
 }
 
 .path-item:first-child {
@@ -884,7 +905,9 @@ section {
 .experience-item {
     display: grid;
 
-    grid-template-columns: 160px minmax(0, 1fr);
+    grid-template-columns:
+        160px
+        minmax(0, 1fr);
 
     gap: 50px;
 
@@ -1001,6 +1024,15 @@ section {
     border-bottom: 1px solid var(--border);
 }
 
+a.publication {
+    transition:
+        padding-left 180ms ease;
+}
+
+a.publication:hover {
+    padding-left: 10px;
+}
+
 .publication-meta {
     display: flex;
     flex-direction: column;
@@ -1048,6 +1080,12 @@ section {
     color: var(--accent);
 
     font-size: 18px;
+
+    transition: transform 180ms ease;
+}
+
+a.publication:hover .publication-arrow {
+    transform: translate(3px, -3px);
 }
 
 
@@ -1083,8 +1121,9 @@ section {
 
 .contact-links {
     display: flex;
-    gap: 12px;
     flex-wrap: wrap;
+
+    gap: 12px;
 }
 
 .contact-links a {
@@ -1102,6 +1141,18 @@ section {
 
     font-size: 14px;
     font-weight: 650;
+
+    transition:
+        background 180ms ease,
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+.contact-links a:hover {
+    background: var(--text);
+    color: white;
+
+    transform: translateY(-2px);
 }
 
 
@@ -1136,11 +1187,18 @@ footer p {
         min-height: 400px;
     }
 
+
+    /* Projects */
+
     .project {
         grid-template-columns: 1fr;
     }
 
     .project-visual {
+        min-height: 380px;
+    }
+
+    .biohub-image img {
         min-height: 380px;
     }
 
@@ -1151,6 +1209,9 @@ footer p {
     .project-brain .project-visual {
         order: 2;
     }
+
+
+    /* About */
 
     .about-grid {
         grid-template-columns: 1fr;
@@ -1176,6 +1237,9 @@ footer p {
     section {
         padding: 85px 0;
     }
+
+
+    /* Navigation */
 
     .nav-links {
         gap: 16px;
@@ -1206,7 +1270,15 @@ footer p {
     }
 
 
-    /* Projects */
+    /* Section headings */
+
+    #work > h2,
+    #experience > h2,
+    #research > h2,
+    .about-heading h2,
+    #contact h2 {
+        font-size: 48px;
+    }
 
     #work > h2 br,
     #experience > h2 br,
@@ -1214,8 +1286,11 @@ footer p {
         display: none;
     }
 
+
+    /* Projects */
+
     .project-content {
-        padding: 36px 26px;
+        padding: 38px 26px;
     }
 
     .project h3 {
@@ -1226,12 +1301,20 @@ footer p {
         min-height: 300px;
     }
 
+    .biohub-image img {
+        min-height: 300px;
+    }
+
+    .arc-grid {
+        grid-template-columns:
+            repeat(3, 28px);
+
+        grid-template-rows:
+            repeat(3, 28px);
+    }
+
 
     /* About */
-
-    .about-heading h2 {
-        font-size: 48px;
-    }
 
     .about-path {
         grid-template-columns: 1fr;
@@ -1241,6 +1324,10 @@ footer p {
         min-height: auto;
 
         padding: 28px 0;
+    }
+
+    .path-item:first-child {
+        padding-left: 0;
     }
 
     .path-item + .path-item {
@@ -1267,7 +1354,9 @@ footer p {
     /* Research */
 
     .publication {
-        grid-template-columns: 1fr 25px;
+        grid-template-columns:
+            1fr
+            25px;
 
         gap: 20px;
     }
@@ -1293,9 +1382,21 @@ footer p {
         display: none;
     }
 
+    .site-name {
+        font-size: 15px;
+    }
+
+    #home h1 {
+        font-size: 50px;
+    }
+
     .hero-actions {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .project h3 {
+        font-size: 36px;
     }
 
 }
