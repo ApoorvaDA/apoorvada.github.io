@@ -19,25 +19,21 @@
 <body>
 
     <!-- =====================================================
-         NAVIGATION
+         HEADER
          ===================================================== -->
 
     <header class="site-header">
 
-        <nav>
+        <a class="site-name" href="#home">
+            Apoorva Ajay
+        </a>
 
-            <a class="site-name" href="#home">
-                Apoorva Ajay
-            </a>
-
-            <div class="nav-links">
-                <a href="#work">Work</a>
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#research">Research</a>
-                <a href="#contact">Contact</a>
-            </div>
-
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#research">Research</a>
+            <a href="#contact">Contact</a>
         </nav>
 
     </header>
@@ -49,7 +45,7 @@
              HERO
              ================================================= -->
 
-        <section id="home">
+        <section id="home" class="hero">
 
             <div class="hero-grid">
 
@@ -66,9 +62,8 @@
 
                     <p class="hero-intro">
                         I'm Apoorva Ajay, a computational scientist and software
-                        engineer working across scientific computing, machine
-                        learning, large-scale computational research, and systems
-                        software.
+                        engineer working across scientific computing, machine learning,
+                        large-scale computational research, and systems software.
                     </p>
 
                     <div class="hero-actions">
@@ -115,248 +110,253 @@
         </section>
 
 
+
         <!-- =================================================
              SELECTED WORK
              ================================================= -->
 
-        <section id="work">
+        <section id="work" class="work-section">
 
             <p class="section-label">
                 Selected Work
             </p>
 
-            <h2>
+            <h2 class="section-heading">
                 Research, machine learning,<br>
                 and computational systems.
             </h2>
 
 
-            <!-- =================================================
-                 01 / BIOHUB
-                 ================================================= -->
-
-            <article class="project project-biohub">
-
-                <div class="project-content">
-
-                    <p class="project-number">
-                        01 / BIOHUB · MACHINE LEARNING · 3D COMPUTER VISION
-                    </p>
-
-                    <h3>
-                        Cell Tracking During Development
-                    </h3>
-
-                    <p class="project-result">
-                        Bronze Medal · Top 8.5%
-                    </p>
-
-                    <p class="project-description">
-                        Extended an open-source deep-learning pipeline for
-                        3D cell detection, temporal tracking, and lineage
-                        reconstruction using ensembles of pretrained
-                        3D U-Net and transformer models.
-                    </p>
-
-                    <div class="project-tech">
-                        <span>PyTorch</span>
-                        <span>3D U-Net</span>
-                        <span>Transformers</span>
-                        <span>CUDA</span>
-                        <span>ILP</span>
-                    </div>
-
-                    <a
-                        class="project-link"
-                        href="https://www.kaggle.com/certification/competitions/apoorvada/biohub-cell-tracking-during-development"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View Kaggle result <span>↗</span>
-                    </a>
-
-                </div>
+            <div class="project-list">
 
 
-                <div class="project-visual biohub-visual">
+                <!-- =========================================
+                     PROJECT 01 — BIOHUB
+                     ========================================= -->
 
-                    <img
-                        src="images/biohub_cover.png"
-                        alt="Cell tracking visualization from the Biohub Cell Tracking During Development competition"
-                    >
+                <article class="project project-biohub">
 
-                    <div class="visual-index">
-                        3D CELL DETECTION / TRACKING / LINEAGE
-                    </div>
+                    <div class="project-content">
 
-                </div>
+                        <p class="project-number">
+                            01 / BIOHUB · MACHINE LEARNING · 3D COMPUTER VISION
+                        </p>
 
-            </article>
+                        <h3>
+                            Cell Tracking During Development
+                        </h3>
 
+                        <p class="project-result">
+                            Bronze Medal · Top 8.5%
+                        </p>
 
-            <!-- =================================================
-                 02 / WHOLE-BRAIN ANALYSIS
-                 ================================================= -->
+                        <p class="project-description">
+                            Extended an open-source deep-learning pipeline for 3D cell
+                            detection, temporal tracking, and lineage reconstruction using
+                            ensembles of pretrained 3D U-Net and transformer models.
+                        </p>
 
-            <article class="project project-brain">
+                        <div class="project-tech">
+                            <span>PyTorch</span>
+                            <span>3D U-Net</span>
+                            <span>Transformers</span>
+                            <span>CUDA</span>
+                            <span>ILP</span>
+                        </div>
 
-                <div class="project-visual brain-visual" aria-hidden="true">
-
-                    <div class="brain-ring brain-ring-one"></div>
-                    <div class="brain-ring brain-ring-two"></div>
-                    <div class="brain-ring brain-ring-three"></div>
-
-                    <div class="brain-axis axis-x"></div>
-                    <div class="brain-axis axis-y"></div>
-
-                    <div class="brain-center"></div>
-
-                    <div class="visual-index">
-                        STPT / REGISTRATION / QUANTIFICATION
-                    </div>
-
-                </div>
-
-
-                <div class="project-content">
-
-                    <p class="project-number">
-                        02 / COMPUTATIONAL NEUROSCIENCE
-                    </p>
-
-                    <h3>
-                        Whole-Brain Computational Analysis
-                    </h3>
-
-                    <p class="project-description">
-                        Developed computational workflows for transforming
-                        Serial Two-Photon Tomography datasets into anatomically
-                        registered quantitative measurements used across
-                        neuroscience research studies.
-                    </p>
-
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>SimpleElastix</span>
-                        <span>Ilastik</span>
-                        <span>Nextflow</span>
-                        <span>Slurm</span>
-                    </div>
-
-                    <a class="project-link" href="#research">
-                        Explore research <span>↗</span>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- =================================================
-                 03 / NEUROGOLF
-                 ================================================= -->
-
-            <article class="project project-neurogolf">
-
-                <div class="project-content">
-
-                    <p class="project-number">
-                        03 / ARC-AGI · ONNX
-                    </p>
-
-                    <h3>
-                        Neurogolf 2026
-                    </h3>
-
-                    <p class="project-result">
-                        Ongoing · 3 tasks completed
-                    </p>
-
-                    <p class="project-description">
-                        Developing constrained ONNX computation graphs for
-                        abstract reasoning transformations under static-shape,
-                        restricted-operator, and model-size constraints.
-                    </p>
-
-                    <div class="project-tech">
-                        <span>ONNX</span>
-                        <span>NumPy</span>
-                        <span>ARC-AGI</span>
-                        <span>Reasoning</span>
-                    </div>
-
-                    <a
-                        class="project-link"
-                        href="https://github.com/ApoorvaDA"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View GitHub <span>↗</span>
-                    </a>
-
-                </div>
-
-
-                <div
-                    class="project-visual neurogolf-visual"
-                    aria-hidden="true"
-                >
-
-                    <div class="arc-grid">
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                        <span></span>
-                        <span class="active"></span>
-                        <span></span>
-
-                        <span class="active"></span>
-                        <span class="active"></span>
-                        <span class="active"></span>
+                        <a
+                            class="project-link"
+                            href="https://www.kaggle.com/certification/competitions/apoorvada/biohub-cell-tracking-during-development"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View Kaggle result <span>↗</span>
+                        </a>
 
                     </div>
 
 
-                    <div class="arc-arrow">
-                        →
-                    </div>
+                    <div class="project-visual image-project-visual biohub-visual">
 
+                        <img
+                            src="images/biohub_cover.png"
+                            alt="Visualization of fluorescent cell tracking during zebrafish development"
+                        >
 
-                    <div class="arc-grid output-grid">
-
-                        <span></span>
-                        <span class="active"></span>
-                        <span></span>
-
-                        <span class="active"></span>
-                        <span class="active"></span>
-                        <span class="active"></span>
-
-                        <span></span>
-                        <span class="active"></span>
-                        <span></span>
+                        <div class="visual-index">
+                            CELL DETECTION / TRACKING / LINEAGE
+                        </div>
 
                     </div>
 
+                </article>
 
-                    <div class="visual-index">
-                        INPUT / TRANSFORMATION / OUTPUT
+
+
+                <!-- =========================================
+                     PROJECT 02 — WHOLE BRAIN
+                     ========================================= -->
+
+                <article class="project project-brain">
+
+                    <div class="project-visual image-project-visual brain-visual">
+
+                        <img
+                            src="images/3D_reconstruction_crop.png"
+                            alt="3D reconstruction of a whole mouse brain from Serial Two-Photon Tomography imaging"
+                        >
+
+                        <div class="visual-index">
+                            STPT / 3D RECONSTRUCTION / REGISTRATION
+                        </div>
+
                     </div>
 
-                </div>
 
-            </article>
+                    <div class="project-content">
+
+                        <p class="project-number">
+                            02 / COMPUTATIONAL NEUROSCIENCE
+                        </p>
+
+                        <h3>
+                            Whole-Brain Computational Analysis
+                        </h3>
+
+                        <p class="project-description">
+                            Developed computational pipeline for transforming Serial
+                            Two-Photon Tomography datasets into anatomically registered
+                            quantitative measurements used across neuroscience research
+                            studies.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>SimpleElastix</span>
+                            <span>Ilastik</span>
+                            <span>Nextflow</span>
+                            <span>Slurm</span>
+                        </div>
+
+                        <a class="project-link" href="#research">
+                            Explore research <span>↘</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     PROJECT 03 — NEUROGOLF
+                     ========================================= -->
+
+                <article class="project project-neurogolf">
+
+                    <div class="project-content">
+
+                        <p class="project-number">
+                            03 / ARC-AGI · ONNX
+                        </p>
+
+                        <h3>
+                            Neurogolf 2026
+                        </h3>
+
+                        <p class="project-result">
+                            Ongoing · 3 tasks completed
+                        </p>
+
+                        <p class="project-description">
+                            Developing constrained ONNX computation graphs for abstract
+                            reasoning transformations under static-shape,
+                            restricted-operator, and model-size constraints.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>ONNX</span>
+                            <span>NumPy</span>
+                            <span>ARC-AGI</span>
+                            <span>Reasoning</span>
+                        </div>
+
+                        <a
+                            class="project-link"
+                            href="https://github.com/ApoorvaDA"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View GitHub <span>↗</span>
+                        </a>
+
+                    </div>
+
+
+                    <div class="project-visual neurogolf-visual" aria-hidden="true">
+
+                        <div class="arc-demo">
+
+                            <div class="arc-grid">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                                <span></span>
+                                <span class="active"></span>
+                                <span></span>
+
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span class="active"></span>
+
+                            </div>
+
+
+                            <div class="arc-arrow">
+                                →
+                            </div>
+
+
+                            <div class="arc-grid">
+
+                                <span></span>
+                                <span class="active"></span>
+                                <span></span>
+
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span class="active"></span>
+
+                                <span></span>
+                                <span class="active"></span>
+                                <span></span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="visual-index">
+                            INPUT / TRANSFORMATION / OUTPUT
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
 
         </section>
+
 
 
         <!-- =================================================
              ABOUT
              ================================================= -->
 
-        <section id="about">
+        <section id="about" class="about-section">
 
             <p class="section-label">
                 About
@@ -368,8 +368,8 @@
                 <div class="about-heading">
 
                     <h2>
-                        From systems software to scientific computing and
-                        machine learning.
+                        From systems software to scientific computing
+                        and machine learning.
                     </h2>
 
                 </div>
@@ -378,24 +378,23 @@
                 <div class="about-story">
 
                     <p class="about-lead">
-                        My work has consistently centered on understanding
-                        complex computational systems and turning difficult
-                        problems into reproducible methods.
+                        My work has consistently centered on understanding complex
+                        computational systems and turning difficult problems into
+                        reproducible methods.
                     </p>
 
                     <p>
-                        I began my career developing systems software for
-                        IBM POWER platforms. I later moved into computational
-                        neuroscience, where I developed large-scale image-analysis
-                        workflows at UT Southwestern Medical Center's Whole Brain
-                        Microscopy Facility.
+                        I began my career developing systems software for IBM POWER
+                        platforms. I later moved into computational neuroscience, where
+                        I developed large-scale image-analysis workflows at UT
+                        Southwestern Medical Center's Whole Brain Microscopy Facility.
                     </p>
 
                     <p>
                         My work has since expanded into machine learning,
-                        GPU-accelerated computing, 3D biological imaging,
-                        and constrained neural-network approaches to abstract
-                        reasoning problems.
+                        GPU-accelerated computing, 3D biological imaging, and
+                        constrained neural-network approaches to abstract reasoning
+                        problems.
                     </p>
 
                 </div>
@@ -404,6 +403,7 @@
 
 
             <div class="about-path">
+
 
                 <div class="path-item">
 
@@ -422,7 +422,7 @@
                         </h3>
 
                         <p>
-                            C · Linux/Unix · IBM POWER · systems programming
+                            C · Linux/Unix · IBM AIX · Systems programming
                         </p>
 
                     </div>
@@ -484,17 +484,18 @@
         </section>
 
 
+
         <!-- =================================================
              EXPERIENCE
              ================================================= -->
 
-        <section id="experience">
+        <section id="experience" class="experience-section">
 
             <p class="section-label">
                 Experience
             </p>
 
-            <h2>
+            <h2 class="section-heading">
                 Experience across research,<br>
                 systems, and computing.
             </h2>
@@ -503,7 +504,7 @@
             <div class="experience-list">
 
 
-                <!-- UTSW -->
+                <!-- UT SOUTHWESTERN -->
 
                 <article class="experience-item">
 
@@ -511,7 +512,6 @@
                         <span>2017 — 2022</span>
                         <span>Dallas, TX</span>
                     </div>
-
 
                     <div class="experience-main">
 
@@ -525,8 +525,8 @@
 
                         <p class="experience-summary">
                             Developed large-scale computational workflows for
-                            whole-brain microscopy, including 3D reconstruction,
-                            image registration, machine-learning-based segmentation,
+                            whole-brain microscopy, including 3D reconstruction, image
+                            registration, machine-learning-based segmentation,
                             quantitative analysis, and HPC processing.
                         </p>
 
@@ -542,6 +542,7 @@
                 </article>
 
 
+
                 <!-- ERICSSON -->
 
                 <article class="experience-item">
@@ -550,7 +551,6 @@
                         <span>2015</span>
                         <span>Internship</span>
                     </div>
-
 
                     <div class="experience-main">
 
@@ -564,8 +564,8 @@
 
                         <p class="experience-summary">
                             Worked with Linux-based hybrid-cloud infrastructure,
-                            containerized workloads, and automated development
-                            and deployment workflows.
+                            containerized workloads, and automated development and
+                            deployment workflows.
                         </p>
 
                         <div class="experience-tags">
@@ -580,6 +580,7 @@
                 </article>
 
 
+
                 <!-- UTD -->
 
                 <article class="experience-item">
@@ -588,7 +589,6 @@
                         <span>2014 — 2015</span>
                         <span>Research</span>
                     </div>
-
 
                     <div class="experience-main">
 
@@ -618,6 +618,7 @@
                 </article>
 
 
+
                 <!-- IBM -->
 
                 <article class="experience-item">
@@ -626,7 +627,6 @@
                         <span>2011 — 2014</span>
                         <span>Systems</span>
                     </div>
-
 
                     <div class="experience-main">
 
@@ -639,10 +639,10 @@
                         </p>
 
                         <p class="experience-summary">
-                            Developed systems-level performance-management
-                            software for IBM POWER platforms, including C-based
-                            components interacting with AIX/Linux environments
-                            and the POWER hypervisor.
+                            Developed systems-level performance-management software
+                            for IBM POWER platforms, including C-based components
+                            interacting with AIX/Linux environments and the POWER
+                            hypervisor.
                         </p>
 
                         <div class="experience-tags">
@@ -656,22 +656,24 @@
 
                 </article>
 
+
             </div>
 
         </section>
+
 
 
         <!-- =================================================
              RESEARCH
              ================================================= -->
 
-        <section id="research">
+        <section id="research" class="research-section">
 
             <p class="section-label">
                 Research
             </p>
 
-            <h2>
+            <h2 class="section-heading">
                 Research shaped by<br>
                 computational methods.
             </h2>
@@ -679,8 +681,6 @@
 
             <div class="publication-list">
 
-
-                <!-- PS19 -->
 
                 <a
                     class="publication"
@@ -697,13 +697,13 @@
                     <div class="publication-main">
 
                         <h3>
-                            Spontaneous pathology in PS19 tauopathy mice
-                            progresses via brain networks
+                            Spontaneous pathology in PS19 tauopathy mice progresses
+                            via brain networks
                         </h3>
 
                         <p>
-                            Brain-wide computational analysis of disease
-                            progression using volumetric imaging data.
+                            Brain-wide computational analysis of disease progression
+                            using volumetric imaging data.
                         </p>
 
                     </div>
@@ -715,7 +715,6 @@
                 </a>
 
 
-                <!-- SPINALTRAQ -->
 
                 <a
                     class="publication"
@@ -732,8 +731,8 @@
                     <div class="publication-main">
 
                         <h3>
-                            SpinalTRAQ: A Novel Pipeline for Volumetric
-                            Cervical Spinal Cord Analysis
+                            SpinalTRAQ: A Novel Pipeline for Volumetric Cervical
+                            Spinal Cord Analysis
                         </h3>
 
                         <p>
@@ -750,7 +749,6 @@
                 </a>
 
 
-                <!-- PNAS -->
 
                 <div class="publication">
 
@@ -762,21 +760,24 @@
                     <div class="publication-main">
 
                         <h3>
-                            B cells migrate into remote brain areas and
-                            support recovery after focal stroke
+                            B cells migrate into remote brain areas and support
+                            recovery after focal stroke
                         </h3>
 
                         <p>
-                            Computational analysis supporting investigation
-                            of brain-wide responses following stroke.
+                            Computational analysis supporting investigation of
+                            brain-wide responses following stroke.
                         </p>
 
+                    </div>
+
+                    <div class="publication-arrow publication-arrow-muted">
+                        —
                     </div>
 
                 </div>
 
 
-                <!-- FRONTIERS -->
 
                 <div class="publication">
 
@@ -788,15 +789,71 @@
                     <div class="publication-main">
 
                         <h3>
-                            Visualization and quantification of post-stroke
-                            neural connectivity and neuroinflammation using
-                            serial two-photon tomography
+                            Visualization and quantification of post-stroke neural
+                            connectivity and neuroinflammation using serial
+                            two-photon tomography
                         </h3>
 
                         <p>
-                            Whole-brain imaging, registration, visualization,
-                            and quantitative analysis using STPT.
+                            Whole-brain imaging, registration, visualization, and
+                            quantitative analysis using STPT.
                         </p>
+
+                    </div>
+
+                    <div class="publication-arrow publication-arrow-muted">
+                        —
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTACT
+             ================================================= -->
+
+        <section id="contact" class="contact-section">
+
+            <p class="section-label">
+                Contact
+            </p>
+
+
+            <div class="contact-grid">
+
+                <h2>
+                    Let's connect.
+                </h2>
+
+
+                <div class="contact-content">
+
+                    <p>
+                        Interested in computational research, machine learning,
+                        scientific software, or collaborating on technically
+                        challenging problems? I'd be happy to connect.
+                    </p>
+
+
+                    <div class="contact-links">
+
+                        <a href="mailto:YOUR_EMAIL_ADDRESS">
+                            Email ↗
+                        </a>
+
+                        <a
+                            href="https://github.com/ApoorvaDA"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub ↗
+                        </a>
 
                     </div>
 
@@ -807,59 +864,26 @@
         </section>
 
 
-        <!-- =================================================
-             CONTACT
-             ================================================= -->
-
-        <section id="contact">
-
-            <p class="section-label">
-                Contact
-            </p>
-
-            <h2>
-                Let's connect.
-            </h2>
-
-            <p class="contact-intro">
-                Interested in computational research, machine learning,
-                scientific software, or collaborating on technically
-                challenging problems? I'd be happy to connect.
-            </p>
-
-
-            <div class="contact-links">
-
-                <a href="mailto:apoorvaajai@gmail.com">
-                    Email
-                </a>
-
-                <a
-                    href="https://github.com/ApoorvaDA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    GitHub ↗
-                </a>
-
-            </div>
-
-        </section>
-
     </main>
+
 
 
     <!-- =====================================================
          FOOTER
          ===================================================== -->
 
-    <footer>
+    <footer class="site-footer">
 
-        <p>
+        <span>
             © 2026 Apoorva Ajay
-        </p>
+        </span>
+
+        <a href="#home">
+            Back to top ↑
+        </a>
 
     </footer>
+
 
 </body>
 
