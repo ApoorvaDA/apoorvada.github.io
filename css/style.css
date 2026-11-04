@@ -62,6 +62,10 @@ a {
     text-decoration: none;
 }
 
+img {
+    max-width: 100%;
+}
+
 
 /* =========================================================
    PAGE WIDTH
@@ -173,16 +177,16 @@ section {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.45fr)
-        minmax(300px, 0.55fr);
+        minmax(0, 1.35fr)
+        minmax(300px, 0.65fr);
 
-    gap: 80px;
+    gap: 72px;
 
     align-items: center;
 }
 
 .hero-content {
-    max-width: 880px;
+    max-width: 850px;
 }
 
 .hero-eyebrow {
@@ -198,11 +202,11 @@ section {
 }
 
 #home h1 {
-    max-width: 920px;
+    max-width: 900px;
 
     margin: 0 0 42px;
 
-    font-size: clamp(66px, 7.2vw, 108px);
+    font-size: clamp(62px, 6.7vw, 102px);
     font-weight: 600;
 
     line-height: 0.98;
@@ -290,7 +294,7 @@ section {
 .hero-visual {
     position: relative;
 
-    min-height: 480px;
+    min-height: 440px;
 
     overflow: hidden;
 
@@ -428,31 +432,8 @@ section {
 
 
 /* =========================================================
-   SHARED PROJECT STYLES
+   SHARED PROJECT TYPOGRAPHY
    ========================================================= */
-
-.project {
-    overflow: hidden;
-
-    margin-bottom: 32px;
-
-    background: var(--white);
-
-    border: 1px solid var(--border);
-    border-radius: 24px;
-
-    transition:
-        transform 200ms ease,
-        box-shadow 200ms ease;
-}
-
-.project:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 22px 55px
-        rgba(0, 0, 0, 0.05);
-}
 
 .project-number {
     margin: 0 0 34px;
@@ -462,6 +443,7 @@ section {
     font-size: 12px;
     font-weight: 700;
 
+    line-height: 1.55;
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
@@ -472,7 +454,7 @@ section {
     color: var(--text);
 
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 650;
 }
 
 .project-description {
@@ -513,6 +495,8 @@ section {
 }
 
 .project-link {
+    display: inline-block;
+
     width: fit-content;
 
     padding-bottom: 2px;
@@ -539,84 +523,129 @@ section {
 
 
 /* =========================================================
-   FEATURED BIOHUB PROJECT
+   BIOHUB FEATURE
    ========================================================= */
 
-.featured-project {
-    display: block;
+.biohub-feature {
+    display: grid;
+
+    grid-template-columns:
+        minmax(430px, 0.9fr)
+        minmax(0, 1.35fr);
+
+    min-height: 650px;
+
+    margin-bottom: 32px;
+
+    overflow: hidden;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    transition:
+        transform 200ms ease,
+        box-shadow 200ms ease;
 }
 
-.featured-project-content {
-    padding: 60px;
+.biohub-feature:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 22px 55px rgba(0, 0, 0, 0.05);
 }
 
-.featured-project .project-number {
+
+/* ---------- Biohub content ---------- */
+
+.biohub-content {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-width: 0;
+
+    padding: 54px 48px;
+}
+
+.biohub-content .project-number {
+    max-width: 420px;
+
     margin-bottom: 38px;
 }
 
-.featured-project h3 {
-    max-width: 950px;
+.biohub-content h3 {
+    margin: 0 0 28px;
 
-    margin: 0 0 44px;
-
-    font-size: clamp(50px, 5.2vw, 76px);
+    font-size: clamp(46px, 4vw, 62px);
     font-weight: 550;
 
     line-height: 1;
     letter-spacing: -0.055em;
 }
 
-.featured-project-details {
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.15fr)
-        minmax(280px, 0.65fr);
-
-    gap: 80px;
-
-    align-items: end;
+.biohub-content .project-result {
+    margin-bottom: 22px;
 }
 
-.featured-description .project-result {
-    margin-bottom: 16px;
+.biohub-content .project-description {
+    max-width: 470px;
+
+    margin-bottom: 28px;
 }
 
-.featured-description .project-description {
-    max-width: 660px;
-
-    margin-bottom: 0;
-}
-
-.featured-meta {
-    display: flex;
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 26px;
+.biohub-content .project-tech {
+    margin-bottom: 34px;
 }
 
 
-/* =========================================================
-   FEATURED BIOHUB IMAGE
-   ========================================================= */
+/* ---------- Biohub image ---------- */
 
-.featured-project-image {
-    width: 100%;
+.biohub-figure {
+    position: relative;
+
+    min-width: 0;
+    min-height: 650px;
 
     overflow: hidden;
 
     background: #070d18;
-
-    border-top: 1px solid var(--border);
 }
 
-.featured-project-image img {
-    display: block;
+.biohub-figure img {
+    position: absolute;
+
+    inset: 0;
 
     width: 100%;
-    height: auto;
+    height: 100%;
+
+    object-fit: cover;
+
+    /*
+       The original image includes a large project title at the
+       bottom. This positioning emphasizes the actual microscopy
+       visualization instead.
+    */
+    object-position: 56% 18%;
+}
+
+.biohub-figure::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    box-shadow:
+        inset 1px 0 0 rgba(255, 255, 255, 0.08);
 }
 
 
@@ -624,15 +653,39 @@ section {
    STANDARD PROJECT CARDS
    ========================================================= */
 
+.project {
+    overflow: hidden;
+
+    margin-bottom: 32px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    transition:
+        transform 200ms ease,
+        box-shadow 200ms ease;
+}
+
+.project:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 22px 55px rgba(0, 0, 0, 0.05);
+}
+
 .project-brain,
 .project-neurogolf {
     display: grid;
 
+    min-height: 500px;
+}
+
+.project-brain {
     grid-template-columns:
         0.95fr
         1.05fr;
-
-    min-height: 500px;
 }
 
 .project-neurogolf {
@@ -647,7 +700,9 @@ section {
 
     justify-content: center;
 
-    padding: 60px;
+    min-width: 0;
+
+    padding: 58px;
 }
 
 .project-content h3 {
@@ -655,10 +710,10 @@ section {
 
     margin: 0 0 20px;
 
-    font-size: clamp(44px, 4vw, 64px);
+    font-size: clamp(42px, 3.8vw, 60px);
     font-weight: 550;
 
-    line-height: 1.02;
+    line-height: 1.03;
     letter-spacing: -0.05em;
 }
 
@@ -668,7 +723,7 @@ section {
 
 
 /* =========================================================
-   PROJECT VISUAL
+   PROJECT VISUALS
    ========================================================= */
 
 .project-visual {
@@ -726,8 +781,7 @@ section {
     width: 52%;
     height: 36%;
 
-    transform:
-        translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .brain-ring-two {
@@ -757,8 +811,7 @@ section {
     width: 16px;
     height: 16px;
 
-    transform:
-        translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
     border-radius: 50%;
 
@@ -1272,12 +1325,30 @@ footer p {
     }
 
 
-    /* Featured Biohub */
+    /* Biohub */
 
-    .featured-project-details {
+    .biohub-feature {
         grid-template-columns: 1fr;
 
-        gap: 32px;
+        min-height: auto;
+    }
+
+    .biohub-content {
+        padding: 50px;
+    }
+
+    .biohub-content h3 br {
+        display: none;
+    }
+
+    .biohub-figure {
+        min-height: 0;
+
+        aspect-ratio: 16 / 9;
+    }
+
+    .biohub-figure img {
+        object-position: 55% 18%;
     }
 
 
@@ -1377,26 +1448,32 @@ footer p {
     }
 
 
-    /* Featured Biohub */
+    /* Biohub */
 
-    .featured-project-content {
-        padding: 38px 26px 40px;
+    .biohub-content {
+        padding: 38px 26px 42px;
     }
 
-    .featured-project .project-number {
+    .biohub-content .project-number {
         margin-bottom: 28px;
     }
 
-    .featured-project h3 {
-        margin-bottom: 32px;
+    .biohub-content h3 {
+        margin-bottom: 24px;
 
         font-size: 42px;
     }
 
-    .featured-project-details {
-        grid-template-columns: 1fr;
+    .biohub-content .project-description {
+        font-size: 15px;
+    }
 
-        gap: 28px;
+    .biohub-figure {
+        aspect-ratio: 4 / 3;
+    }
+
+    .biohub-figure img {
+        object-position: 55% 15%;
     }
 
 
@@ -1505,7 +1582,7 @@ footer p {
         align-items: flex-start;
     }
 
-    .featured-project h3 {
+    .biohub-content h3 {
         font-size: 38px;
     }
 
