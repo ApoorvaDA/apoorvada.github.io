@@ -835,13 +835,21 @@ main > section,
    EXPERIENCE
    ========================================================= */
 
+/*
+   IMPORTANT:
+   No bottom padding and no section bottom border.
+
+   The final experience-item already supplies the visual rule.
+   This removes the double-line transition before Education.
+*/
+
 .experience-section {
     padding:
         130px
         0
-        145px;
+        0;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom: 0;
 }
 
 .experience-list {
@@ -955,9 +963,14 @@ main > section,
    EDUCATION
    ========================================================= */
 
+/*
+   The 125px top padding creates the visual separation from
+   Experience without introducing another horizontal rule.
+*/
+
 .education-section {
     padding:
-        105px
+        125px
         0
         120px;
 
@@ -1001,8 +1014,7 @@ main > section,
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
-    /* No top or bottom border.
-       Keeps the section transition clean. */
+    /* Intentionally no horizontal borders. */
 }
 
 
@@ -1646,13 +1658,33 @@ a.publication:hover .publication-arrow {
 
     .work-section,
     .about-section,
-    .experience-section,
-    .education-section,
     .research-section,
     .contact-section {
         padding:
             90px
             0;
+    }
+
+    /*
+       Preserve the desktop Experience → Education fix
+       instead of restoring generic section padding.
+    */
+
+    .experience-section {
+        padding:
+            90px
+            0
+            0;
+
+        border-bottom: 0;
+    }
+
+    .education-section {
+        padding:
+            90px
+            0;
+
+        border-bottom: 1px solid var(--border);
     }
 
     .section-heading {
@@ -1766,21 +1798,9 @@ a.publication:hover .publication-arrow {
             0;
     }
 
-
-    /* EDUCATION */
-
-    .education-section {
-        padding:
-            90px
-            0;
-    }
-
     .education-card h3 {
         font-size: 1.8rem;
     }
-
-
-    /* RESEARCH */
 
     .publication {
         padding:
