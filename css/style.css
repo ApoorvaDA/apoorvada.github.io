@@ -972,17 +972,17 @@ main > section,
 
     grid-template-columns:
         minmax(0, 1fr)
-        minmax(280px, 0.55fr);
+        minmax(380px, 0.7fr);
 
-    gap: 60px;
+    gap: 70px;
 
-    align-items: end;
+    align-items: center;
 
     margin-bottom: 55px;
 }
 
 .education-intro {
-    max-width: 420px;
+    max-width: 500px;
 
     margin: 0;
 
@@ -1001,8 +1001,8 @@ main > section,
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    /* No top or bottom border.
+       Keeps the section transition clean. */
 }
 
 
@@ -1028,25 +1028,13 @@ main > section,
 }
 
 
-/* EDUCATION METADATA */
+/* EDUCATION DATE */
 
 .education-card-top {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 20px;
+    justify-content: flex-end;
 
     margin-bottom: 52px;
-}
-
-.education-number {
-    color: var(--accent);
-
-    font-size: 0.7rem;
-    font-weight: 700;
-
-    letter-spacing: 0.12em;
 }
 
 .education-date {
@@ -1059,7 +1047,7 @@ main > section,
 /* UNIVERSITY */
 
 .education-card h3 {
-    max-width: 500px;
+    max-width: 520px;
 
     margin: 0;
 
@@ -1091,11 +1079,7 @@ main > section,
 }
 
 .education-degree span {
-    display: block;
-
-    color: var(--muted);
-
-    font-size: 0.82rem;
+    color: var(--accent);
 }
 
 
@@ -1130,25 +1114,6 @@ main > section,
 
     font-size: 0.67rem;
     font-weight: 600;
-}
-
-
-/* EDUCATION NOTE */
-
-.education-note {
-    max-width: 430px;
-
-    margin:
-        auto
-        0
-        0;
-
-    padding-top: 38px;
-
-    color: var(--muted);
-
-    font-size: 0.82rem;
-    line-height: 1.6;
 }
 
 
@@ -1572,9 +1537,13 @@ a.publication:hover .publication-arrow {
     .education-header {
         grid-template-columns: 1fr;
 
-        gap: 20px;
+        gap: 18px;
 
         margin-bottom: 42px;
+    }
+
+    .education-intro {
+        max-width: 600px;
     }
 
     .education-grid {
@@ -1601,11 +1570,12 @@ a.publication:hover .publication-arrow {
     }
 
     .education-card-top {
-        margin-bottom: 35px;
+        justify-content: flex-start;
+
+        margin-bottom: 28px;
     }
 
-    .education-coursework,
-    .education-note {
+    .education-coursework {
         margin-top: 30px;
         padding-top: 0;
     }
